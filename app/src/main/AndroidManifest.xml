@@ -2,9 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xposed.raingo.xposed_test">
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <application
+        android:name=".XApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/xposed"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -15,6 +18,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true"/>
+
+        <meta-data
+            android:name="xposeddescription"
+            android:value="study-xposed"/>
+
+        <meta-data
+            android:name="xposedminversion"
+            android:value="80"/>
+
     </application>
 
 </manifest>
